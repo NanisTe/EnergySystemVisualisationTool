@@ -1,0 +1,157 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Text short cuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\shortcutexample}[1][]{short cut example{\ifx&#1&{ }\else#1\fi}}
+
+\newcommand{\pthc}{PtG}
+\newcommand{\ptg}{PtG}
+\newcommand{\ptgas}{Power-to-Gas}
+\newcommand{\ptsng}{Power-to-SNG}
+
+\newcommand{\rs}[1]{\relsize{#1}}
+\newcommand{\ms}[1]{\mathsmaller{#1}}
+
+\newcommand{\citeA}[2][]{{\citeauthor{#2}{ }\cite[#1]{#2}}}
+
+\newcommand{\fig}[1]{Figure \ref{fig:#1}}
+\newcommand{\tab}[1]{Table \ref{tab:#1}}
+\newcommand{\equ}[1]{Equation \ref{equ:#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SI Einheiten
+\AtBeginDocument{\DeclareSIUnit{\kWh}{kWh}}
+\AtBeginDocument{\DeclareSIUnit{\MWh}{MWh}}
+\AtBeginDocument{\DeclareSIUnit{\GWh}{GWh}}
+\AtBeginDocument{\DeclareSIUnit{\TWh}{TWh}}
+\AtBeginDocument{\DeclareSIUnit{\ncm}{Nm$^3$}}
+\AtBeginDocument{\DeclareSIUnit{\annum}{a}}
+
+\newcommand{\kwhperNcm}[3]{\SI{#1}{\kWh\of{#2}\per\ncm\of{\ce{#3}}}} % not working because parameters can not be used in siunitx without error
+
+\newcommand{\cozwei}{\ce{CO2}}
+\newcommand{\hzwei}{\ce{H2}}
+\newcommand{\chvier}{\ce{CH4}}
+
+\newcommand{\gram}[2][]{\SI{#2}{\gram\of{#1}}}
+\newcommand{\gramCOzwei}[1][]{\gram[\rs{-1}\ce{CO2}]{#1}}
+
+\newcommand{\kwof}[2][]{\SI{#1}{\kilo\watt\of{#2}}\xspace}
+\newcommand{\mwof}[2][]{\SI{#1}{\mega\watt\of{#2}}\xspace}
+\newcommand{\gwof}[2][]{\SI{#1}{\giga\watt\of{#2}}\xspace}
+
+\newcommand{\kwel}[1][]{\kwof[#1]{el}}
+\newcommand{\mwel}[1][]{\mwof[#1]{el}}
+\newcommand{\gwel}[1][]{\gwof[#1]{el}}
+
+\newcommand{\mwsng}[1][]{\mwof[#1]{\relsize{-1} SNG}}
+\newcommand{\gwsng}[1][]{\gwof[#1]{\relsize{-1} SNG}}
+
+\newcommand{\mwHzwei}[1][]{\mwof[#1]{\ce{H2}}}
+\newcommand{\gwHzwei}[1][]{\gwof[#1]{\ce{H2}}}
+
+\newcommand{\kwhel}[1][]{\SI{#1}{\kWh\of{el}}\xspace}
+\newcommand{\mwhel}[1][]{\SI{#1}{\MWh\of{el}}\xspace}
+\newcommand{\gwhel}[1][]{\SI{#1}{\GWh\of{el}}\xspace}
+\newcommand{\twhel}[1][]{\SI{#1}{\TWh\of{el}}\xspace}
+
+\newcommand{\kwhhyd}[1][]{\SI{#1}{\kWh\of{\ce{H2}}}\xspace}
+\newcommand{\mwhhyd}[1][]{\SI{#1}{\MWh\of{\ce{H2}}}\xspace}
+\newcommand{\gwhhyd}[1][]{\SI{#1}{\GWh\of{\ce{H2}}}\xspace}
+\newcommand{\twhhyd}[1][]{\SI{#1}{\TWh\of{\ce{H2}}}\xspace}
+
+\newcommand{\kwhsng}[1][]{\SI{#1}{\kWh\of{\relsize{-1} SNG}}\xspace}
+\newcommand{\mwhsng}[1][]{\SI{#1}{\MWh\of{\relsize{-1} SNG}}\xspace}
+\newcommand{\gwhsng}[1][]{\SI{#1}{\GWh\of{\relsize{-1} SNG}}\xspace}
+\newcommand{\twhsng}[1][]{\SI{#1}{\TWh\of{\relsize{-1} SNG}}\xspace}
+
+\newcommand{\kwhth}[1][]{\SI{#1}{\kWh\of{\relsize{-1} th}}\xspace}
+
+
+\newcommand{\tCOzwei}[1][]{\SI{#1}{\tonne\of{\relsize{-1}\ce{CO2}}}}
+
+\newcommand{\tonsof}[2]{\SI{#1}{\tonne\of{\relsize{-1}\ce{#2}}}}
+\newcommand{\kgof}[2][]{\SI{#1}{\kilogram\of{\relsize{-1}#2}}}
+
+\newcommand{\MiotCOzwei}[1]{#1\,Mio.\,\tCOzwei}
+
+\newcommand{\kwhperkilogram}[3]{\SI{#1}{\kWh\of{#2}\per\kilogram\of{\ce{#3}}}}
+\newcommand{\normcubicmetrehour}[2]{\SI{#1}{N\cubic\metre\of{\ce{#2}}\per\hour}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Numbered circles definition for svg pictures
+
+\usetikzlibrary{shapes,snakes}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,scale=0.8,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\diam[1]{\tikz[baseline=(char.base)]{
+		\node[shape=diamond,scale=0.75,draw,inner sep=1pt] (char) {#1};}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New table column type definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{V}[1]{>{\small\centering\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+\newcolumntype{K}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{k}[1]{>{\small\raggedright\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+%\renewcommand{\tabularxcolumn}[1]{m{#1}}
+
+%_________________________________________________________________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define commands for siunitx package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\tempC}[1]{\SI{#1}{\celsius}}
+
+%_________________________________________________________________________________________________________________
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODO notes commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+% Colors
+\definecolor{mygreen}{RGB}{0,105,0}
+\definecolor{myred}{RGB}{250,0,0}
+\definecolor{nitrogengreen}{RGB}{0,130,60}
+\definecolor{methaneorange}{RGB}{246,135,18}
+\definecolor{hydrogenred}{RGB}{237,28,36}
+\definecolor{cdioxblue}{RGB}{46,49,146}
+\definecolor{cmonoxblue}{RGB}{0,173,239}
+%%%%%%%%%%%%%%
+
+\newcommand{\onlydraft}[1]{\ifoptionfinal{}{#1}}
+\newcommand{\GUIDE}[2][]{{\todo[inline,color=cyan,#1]{\textit{\textcolor{black}{\underline{STORY LINE:}\\ #2}}}}}
+
+\newcommand{\KEYMESSAGE}[2][]{{\todo[inline,color=orange,#1]{\textit{\textcolor{black}{\underline{KEY MESSAGE:}\\ #2}}}}}
+\newcommand{\KEYWORD}[1]{\todo[inline,color=cyan]{\textit{\textcolor{black}{\underline{KEY WORD(s):}\\ #1}}}}
+\newcommand{\INFO}[2][]{\todo[inline,color=yellow,#1]{\textit{\textcolor{black}{\underline{INFO:}\\ #1}}}}
+\newcommand{\TODO}[2][]{{\todo[inline,color=myred,#1]{{\it\color{black}\underline{TO DO:}\newline #2}}}}
+
+\newcommand{\ASK}[3][]{\todo[inline,color=magenta,#1]{\textit{\textcolor{black}{\underline{ASK #2:}\\ #3}}}}
+
+\newcommand{\notiz}[2][]{{\todo[size=\small,#1]{#2}}}
+\newcommand{\notizinline}[1]{\notiz[inline]{{\textbullet} #1}}
+
+\newcommand{\mref}[1]{[missing ref: #1 \ref{#1}]}
+
+\newcommand{\platzhalter}[1]{\textit{\textcolor{blue}{\underline{PLATZHALTER:} #1}}}
+
+\newcommand{\bp}[1]{\textbullet #1\\}
+\newcommand{\bpdone}[1]{\checkmark \pbox[t]{.9\columnwidth}{\scriptsize \sout{#1}}\\}
+
+\newcommand{\BP}[2][]{\GUIDE[#1]{\bp{#2}}}
+\newcommand{\BPdone}[2][]{\GUIDE[#1]{\bpdone{#2}}}
+
+%_________________________________________________________________________________________________________________

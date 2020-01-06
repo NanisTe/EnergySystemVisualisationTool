@@ -1,0 +1,49 @@
+
+%It is, however, highly recommended to use the fonts with the extended T1 and TS1 (text symbols) encodings by means of the commands:
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}		% Umlaute etc. können direkt eingegeben werden --> changed from utf8x to utf8 because error with biblatex occured
+\usepackage{textcomp}
+%When using PostScript fonts that come from ‘outside the TEX world’, there is no reason at all to stay with the obsolete OT1 encoding, which would not provide access to all available glyphs. However, since these fonts were not particularly designed for use with TEX, they do not include all of the text companion (TS1) symbols.
+
+%%%% Graphics
+\usepackage{lineno}
+\linenumbers
+\modulolinenumbers[2]
+
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usepackage{enumitem}
+\usepackage{bookmark}
+
+\usepackage{grffile}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{relsize}
+\usepackage[version=4]{mhchem} % for chemical reaction typing
+
+\usepackage{xfrac}
+\usepackage[per-mode = fraction,detect-all = true]{siunitx} % per-mode=fraction
+\usepackage{xspace} % vereinfachtes Eingeben von Leerschlägen hinter Shortcut-Commands Beispiel: \newcommand{\DNA}{Deso....\xspace}
+\usepackage{cancel} % to allow siuntitx to cancel out in equations of units
+
+
+% !!! install inkscape and add it to system path and add -shell-escape option to the pdflatex compile command
+\usepackage{svg}
+\usepackage[twoside,figuresright]{rotating} % allows sidewaysfigure environment
+\usepackage{afterpage} % To place figure on odd page or even page
+
+\usepackage[colorinlistoftodos,draft]{todonotes}
+\reversemarginpar												% bring todonotes to the oposite margin
+\setlength{\marginparwidth}{3cm}				% change width of todonotes at the margins
+
+%%%%%%% FOR nice tables %%%%%%%%%%%%
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{multirow}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
